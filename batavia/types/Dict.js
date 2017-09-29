@@ -129,18 +129,28 @@ var isDeleted = function(x) {
     var types = require('../types')
     var builtins = require('../builtins')
 
-    return x !== null &&
+    if ( x !== null &&
         builtins.hash([x], null).__eq__(new types.Int(0)).valueOf() &&
-        x.__eq__(DELETED).valueOf()
+        x.__eq__(DELETED).valueOf() ) {
+        return true
+    } else {
+        return false
+    }
+    
 }
 
 var isEmpty = function(x) {
     var types = require('../types')
     var builtins = require('../builtins')
-
-    return x !== null &&
+    
+    if ( x !== null &&
         builtins.hash([x], null).__eq__(new types.Int(0)).valueOf() &&
-        x.__eq__(EMPTY).valueOf()
+        x.__eq__(EMPTY).valueOf() ) {
+        return true
+    } else {
+        return false
+    }
+
 }
 
 Dict.prototype.__str__ = function() {
