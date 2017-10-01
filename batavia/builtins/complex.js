@@ -5,10 +5,10 @@ function complex(args, kwargs) {
     if (arguments.length !== 2) {
         throw new exceptions.BataviaError.$pyclass('Batavia calling convention not used.')
     }
-    if (kwargs && Object.keys(kwargs).length > 0) {
+    if (kwargs && (Object.keys(kwargs).length > 0)) {
         throw new exceptions.TypeError.$pyclass("complex() doesn't accept keyword arguments")
     }
-    if (!args || args.length > 2) {
+    if (!args || (args.length > 2)) {
         throw new exceptions.TypeError.$pyclass('complex() expected at most 2 arguments (' + args.length + ' given)')
     }
     if (types.isinstance(args[0], types.Complex) && !args[1]) {
@@ -19,7 +19,7 @@ function complex(args, kwargs) {
         re = args[0]
     }
     var im = new types.Float(0)
-    if (args.length === 2 && args[1]) {
+    if ((args.length === 2) && args[1]) {
         im = args[1]
     }
     return new types.Complex(re, im)
