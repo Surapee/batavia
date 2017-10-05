@@ -8,5 +8,5 @@ class Point:
         return self.x ** self.x + self.y ** self.y
 
 
-p = Point(2, 3)
-print('Distance is', p.distance())
+point = Point(x, y)
+print('Distance is', point.distance())
