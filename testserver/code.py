@@ -1,12 +1,12 @@
 
 class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, firstPoint, secondPoint):
+        self.firstPoint = firstPoint
+        self.secondPoint = secondPoint
 
     def distance(self):
-        return self.x ** self.x + self.y ** self.y
+        return self.firstPoint ** self.firstPoint + self.secondPoint ** self.secondPoint
 
 
-p = Point(2, 3)
-print('Distance is', p.distance())
+point = Point(2, 3)
+print('Distance is', point.distance())
